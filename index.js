@@ -1,16 +1,28 @@
 var katzDeli = [];
 
-function takeANumber(katzDeliLine, name) {
-  katzDeliLine.push(name);
-  return `Welcome, ${name}. You are number ${katzDeliLine.length} in line.`;
+function takeANumber(katzDeliLine) {
+  var counter = 0;
+  counter++;
+  katzDeliLine.push(counter)
+  return `You are number ${counter}.`;
 }
+
+console.log(takeANumber(katzDeli)) //=> You are number 1
+console.log(takeANumber(katzDeli)) //=> You are number 2
+console.log(takeANumber(katzDeli)) //=> You are number 3
+
+console.log(nowServing(katzDeli))
+console.log(nowServing(katzDeli))
+console.log(nowServing(katzDeli))
+
+console.log(takeANumber(katzDeli)) //=> You are number 4
 
 function nowServing(katzDeliLine) {
   if(katzDeliLine.length === 0) {
     return "There is nobody waiting to be served!";
   } else {
-    katzDeliLine = katzDeliLine.shift();  
-    return `Currently serving ${katzDeliLine}.`;
+    var serving = katzDeliLine.shift();  
+    return `Currently serving ${serving}.`;
   }
 }
 
